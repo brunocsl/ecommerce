@@ -1,0 +1,26 @@
+﻿@model ecommerce.Entidades.Produto
+@{
+    ViewBag.Title = "Remove";
+}
+
+<h1>Remover Produto</h1>
+
+<h2>Tem certeza que deseja remover esse Produto?</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(p => p.Nome)</th>
+            <th>@Html.DisplayNameFor(p => p.Preco)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Html.DisplayFor(p => p.Nome)</td>
+            <td>@Html.DisplayFor(p => p.Preco)</td>
+        </tr>
+    </tbody>
+</table>
+
+    @Html.ActionLink("Sim", "ConfirmaRemove", new { id = Model.Id }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Não", "Index", new { }, new { @class = "btn btn-default" })

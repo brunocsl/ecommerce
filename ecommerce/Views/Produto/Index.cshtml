@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ecommerce.Entidades.Produto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Adicionar produto", "Adiciona")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edita", new { id=item.Id}) |
+            @Html.ActionLink("Remover", "Remove", new { id=item.Id, nome=item.Nome, preco=item.Preco })
+        </td>
+    </tr>
+}
+
+</table>

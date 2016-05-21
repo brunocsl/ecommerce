@@ -21,7 +21,7 @@ namespace ecommerce.DAO
             context.SaveChanges();       
         }
 
-        public void Atualiza()
+        public void Edita()
         {
             context.SaveChanges();
         }
@@ -37,9 +37,10 @@ namespace ecommerce.DAO
             context.SaveChanges();
         }
 
-        public Produto BuscaPorId (int id)
+        public Produto BuscaPorId(int id)
         {
             return context.Produtos.FirstOrDefault(p => p.Id == id);
+        }
 
     }
 }
